@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
+  },
+  "defaultProject": "my-plugin",
   "projects": {
     "my-plugin": {
       "root": "packages/my-plugin",
@@ -9,16 +13,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/my-plugin/**/*.ts"
-            ]
+            "lintFilePatterns": ["packages/my-plugin/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/my-plugin"
-          ],
+          "outputs": ["coverage/packages/my-plugin"],
           "options": {
             "jestConfig": "packages/my-plugin/jest.config.js",
             "passWithNoTests": true
@@ -26,9 +26,7 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/packages/my-plugin",
             "tsConfig": "packages/my-plugin/tsconfig.lib.json",
@@ -63,8 +61,8 @@
     },
     "my-plugin-e2e": {
       "projectType": "application",
-      "root": "e2e\\my-plugin-e2e",
-      "sourceRoot": "e2e\\my-plugin-e2e/src",
+      "root": "e2e/my-plugin-e2e",
+      "sourceRoot": "e2e/my-plugin-e2e/src",
       "targets": {
         "e2e": {
           "executor": "@nrwl/nx-plugin:e2e",
@@ -77,8 +75,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/workspace"
   }
 }
