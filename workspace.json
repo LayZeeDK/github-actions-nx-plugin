@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
+  },
+  "defaultProject": "my-plugin",
   "projects": {
     "my-plugin": {
       "root": "packages/my-plugin",
@@ -71,8 +75,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/workspace"
   }
 }
